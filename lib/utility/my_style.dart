@@ -64,5 +64,16 @@ class MyStyle {
         ),
       );
 
+  Widget titleH4(String string) {
+    return Text(
+      string,
+      style: TextStyle(
+        fontSize: 16,
+        //fontWeight:FontWeight.bold,
+        color: Colors.black,
+      ),
+    );
+  }
+
   MyStyle();
 }

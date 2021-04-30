@@ -1,4 +1,5 @@
 import 'package:cartoon_app_test/utility/my_style.dart';
+import 'package:cartoon_app_test/widget/add_new_cartoon.dart';
 import 'package:cartoon_app_test/widget/information_login.dart';
 import 'package:cartoon_app_test/widget/show_cartoon_list.dart';
 import 'package:firebase_auth/firebase_auth.dart';

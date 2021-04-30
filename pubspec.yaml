@@ -33,6 +33,9 @@ dependencies:
   cloud_firestore: ^1.0.6
   auto_data: ^0.0.3
   syncfusion_flutter_pdfviewer: ^19.1.57-beta
+  file_picker: ^3.0.1
+  image_picker: ^0.7.4
+  firebase_storage: ^8.0.5
 
 dev_dependencies:
   flutter_test:

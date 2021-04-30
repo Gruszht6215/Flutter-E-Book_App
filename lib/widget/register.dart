@@ -13,6 +13,27 @@ class _RegisterState extends State<Register> {
   double screen;
   String name, user, password;
 
+  @override
+  Widget build(BuildContext context) {
+    screen = MediaQuery.of(context).size.width;
+    return Scaffold(
+      floatingActionButton: buildFloatingActionButton(),
+      appBar: AppBar(
+        backgroundColor: MyStyle().primaryColor,
+        title: Text('Register'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            buildName(),
+            buildUser(),
+            buildPassword(),
+          ],
+        ),
+      ),
+    );
+  }
+
   Container buildName() {
     return Container(
       decoration: BoxDecoration(
@@ -102,27 +123,6 @@ class _RegisterState extends State<Register> {
             borderRadius: BorderRadius.circular(20),
             borderSide: BorderSide(color: MyStyle().lightColor),
           ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    screen = MediaQuery.of(context).size.width;
-    return Scaffold(
-      floatingActionButton: buildFloatingActionButton(),
-      appBar: AppBar(
-        backgroundColor: MyStyle().primaryColor,
-        title: Text('Register'),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            buildName(),
-            buildUser(),
-            buildPassword(),
-          ],
         ),
       ),
     );

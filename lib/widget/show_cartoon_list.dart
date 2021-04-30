@@ -1,5 +1,7 @@
 import 'package:cartoon_app_test/models/cartoon_model.dart';
 import 'package:cartoon_app_test/utility/my_style.dart';
+import 'package:cartoon_app_test/widget/add_new_cartoon.dart';
+import 'package:cartoon_app_test/widget/information_login.dart';
 import 'package:cartoon_app_test/widget/show_pdf.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -46,6 +48,17 @@ class _ShowCartoonListState extends State<ShowCartoonList> {
     });
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButton: buildRegister(),
+      body: widgets.length == 0
+          ? Center(child: CircularProgressIndicator())
+          : GridView.extent(maxCrossAxisExtent: 200, children: widgets),
+    );
+  }
+
   Widget createWidget(CartoonModel model, int index) => GestureDetector(
         onTap: () {
           print('Clicked index = $index');
@@ -76,12 +89,14 @@ class _ShowCartoonListState extends State<ShowCartoonList> {
         ),
       );
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: widgets.length == 0
-          ? Center(child: CircularProgressIndicator())
-          : GridView.extent(maxCrossAxisExtent: 200, children: widgets),
-    );
-  }
+  TextButton buildRegister() => TextButton(
+      onPressed: () {
+        Navigator.restorablePushNamed(context, '/addNewCartoon');
+        // Navigator.pushNamed(context, '/addNewCartoon');
+      },
+      child: Icon(
+        Icons.add_circle_outlined,
+        color: MyStyle().lightColor,
+        size: 75,
+      ));
 }

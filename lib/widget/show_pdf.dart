@@ -6,7 +6,7 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 class ShowPdf extends StatefulWidget {
   final CartoonModel cartoonModel;
 
-  ShowPdf({Key key, this.cartoonModel}) : super(key: key);
+  const ShowPdf({Key key, this.cartoonModel}) : super(key: key);
 
   @override
   _ShowPdfState createState() => _ShowPdfState();
@@ -44,7 +44,6 @@ class _ShowPdfState extends State<ShowPdf> {
         ),
         body: sfPdfViewer == null
             ? Center(child: CircularProgressIndicator())
-            : sfPdfViewer
-    );
+            : sfPdfViewer);
   }
 }
