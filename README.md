@@ -1,5 +1,3 @@
-# cartoon_app_test
-
 A new Flutter application.
 
 ## Getting Started
